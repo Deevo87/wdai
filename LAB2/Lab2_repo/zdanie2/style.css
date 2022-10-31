@@ -1,0 +1,90 @@
+body {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.box {
+    border: 3px solid darkblue;
+    width: 60%;
+    height: 16rem;
+    display: flex;
+    text-align: center;
+    margin: 2rem;
+}
+
+/* a */
+
+.pad2, .pad3 , .pad4 {
+    border: 1px solid darkblue;
+    width: 25%;
+    height: 25%;
+    padding-top: 0.5rem;
+}
+
+.pad1 {
+    background-color:  lightcoral;
+    border: 1px solid darkblue;
+    width: 25%;
+    text-align: top;
+    align-self: stretch;
+}
+
+.pad2 {
+    background-color: aquamarine;
+    align-self: flex-start;
+}
+
+.pad3 {
+    background-color: lightcyan;
+
+    align-self: center;
+}
+
+.pad4 {
+    background-color: lightgreen;
+    align-self: flex-start;
+}
+
+/* b */
+
+.box2 {
+    border: 3px solid darkgreen;
+    width: 60%;
+    height: 16rem;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.item2, .item3, .item4 {
+    border: 1px solid darkgreen;
+    width: 25%;
+    height: 25%;
+    padding-top: 0.5rem;
+}
+
+.item1 {
+    border: 1px solid darkgreen;
+    background-color: #636940;
+    height: 25%;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+    align-self: stretch;
+    text-align: left;
+}
+
+.item2 {
+    background-color: #59A96A;
+    align-self: flex-start;
+}
+
+.item3 {
+    background-color: #9BDEAC;
+    align-self: center;
+}
+
+.item4 {
+    background-color: #B4E7CE;
+    align-self: flex-start;
+}

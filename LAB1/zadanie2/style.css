@@ -1,0 +1,85 @@
+body{
+    margin: 0 auto;
+    width: 100%;
+
+}
+
+.container{
+    background-color: #FCEFEF;
+    margin: auto;
+    width: 70%;
+    display: grid;
+    grid-template-rows: 1.5fr 1fr 4fr 1fr;
+    padding: 0.7rem;
+    border: 1px solid black;
+}
+
+.d1 {
+    background-color: #7FD8BE;
+    text-align: center;
+    border: 1px solid black;
+    border-bottom: none;
+}
+
+.logo {
+    background-color: #FCEFEF;
+    border: 1px solid black;
+    text-align: center;
+    position: absolute;
+    top: 2.3%;
+    left: 16.4%;
+    padding: 0.5rem;
+    width: 13.3%;
+}
+
+.pasek {
+    background-color: #A1FCDF;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.option {
+    border-collapse: collapse;
+    border: 1px solid black;
+    border-left: none;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.option1, .option3 {
+    background-color: #FCEFEF;
+    font-weight: 900;
+}
+
+.option1 {
+    border-left: 1px solid black;
+}
+
+.kontent {
+    background-color: #FCD29F;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    text-align: center;
+}
+
+.split1{
+    border: 1px solid black;
+    border-top: none;
+    padding: 1rem;
+}
+
+.split2 {
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    padding: 1rem;
+}
+
+.footer {
+    background-color: #FCAB64;
+    border: 1px solid black;
+    border-top: none;
+    text-align: center;
+    padding: 0.5rem;
+}
