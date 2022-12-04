@@ -1,0 +1,35 @@
+{
+    "workers":[
+        {
+            "name": "Scooby Doo",
+            "role": "The best dog",
+            "image": "scooby.jpg",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque recusandae esse odio reiciendis delectus id ipsam autem maxime perspiciatis obcaecati?"
+        },
+        {
+            "name": "Norville 'Shaggy' Rogers",
+            "role": "The best dog's owner",
+            "image": "shaggy.jpg",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus maiores commodi enim ullam. Exercitationem quas distinctio molestias facilis eius tempora. Nihil aliquid ea animi soluta!"
+        },
+        {
+            "name": "Velma Dinkley",
+            "role": "The smart one",
+            "image": "velma.jpg",
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur voluptatum hic in sint sapiente. Et tenetur aliquam iste repellendus maxime provident cumque cupiditate enim aliquid."
+        },
+        {
+            "name": "Fred Jones",
+            "role": "Driver",
+            "image": "fred.jpg",
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis itaque praesentium consequuntur laudantium odio aspernatur voluptates aut ab exercitationem necessitatibus. Inventore quam quae facilis dolore?"
+        },
+        {
+            "name": "Daphne Blake",
+            "role": "Driver's girlfriend",
+            "image": "daphne.jpg",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio libero provident illo, excepturi necessitatibus dolorum ad doloribus veritatis corporis sapiente aut aliquam, pariatur, cupiditate labore."
+
+        }
+    ]
+}

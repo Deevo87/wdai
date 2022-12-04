@@ -1,0 +1,98 @@
+
+
+<nav class="navbar">
+  
+  <div class="container-fluid">
+    <button class="navbar-toggler add-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span>Dodaj wycieczkę</span>
+    </button>
+    <div class="collapse navbar-collapse navbar-light bg-light" id="navbarNav">
+      <div class="add-form">
+        <div class="add-form-el">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Nazwa">
+          </div>
+        </div>
+        <div class="add-form-el">
+          <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Kraj">
+          </div>
+        </div>
+        <div class="add-form-el">
+          <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Data rozpoczęcia">
+          </div>
+        </div>
+        <div class="add-form-el">
+          <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Data zakończenia">
+          </div>
+        </div>
+        <div class="add-form-el">
+          <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Cena">
+              <span class="input-group-text" id="basic-addon3">zł</span>
+          </div>
+        </div>
+        <div class="add-form-el mb-3">
+          <div class="input-group">
+            <textarea class="form-control" placeholder="Krótki opis"></textarea>
+          </div>
+        </div>
+        <div class="add-form-el">
+          <div class="input-group mb-3">
+              <span class="input-group-text">assets/img/</span>
+              <input type="text" class="form-control" placeholder="Zdjęcie">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+<p>NgModel and reactive forms can be used without the 'rate' binding</p>
+
+<div class="mb-3">
+	<ngb-rating [formControl]="ctrl" (click)="consolLoguj()"></ngb-rating>
+	<div class="form-text small">
+		<div *ngIf="ctrl.valid" class="text-success">Thanks!</div>
+		<div *ngIf="ctrl.invalid" class="text-danger">Please rate us</div>
+	</div>
+</div>
+
+<hr />
+<pre>Model: <b>{{ ctrl.value }}</b></pre>
+
+<mat-slider>
+  <input matSliderStartThumb>
+  <input matSliderEndThumb>
+</mat-slider>
+essa
+
+<h2>Five Star Rating</h2>
+  <div class="col-lg-8 col-md-4 col-sm">
+    <form name="form" (ngSubmit)="f.form.valid && submitForm(f)" #f="ngForm" novalidate>
+      <label>1. Add your rating : 1 ? (rating 1 to 5) </label>
+      <br />
+      <ngb-rating [max]="5" [(rate)]="rating1" [readonly]="false">
+        <ng-template let-fill="fill" let-index="index">
+          <span class="star" [class.filled]="fill === 100" [class.bad]="index <= 5">&#9733;</span>
+        </ng-template>
+      </ngb-rating>
+      <p>Rating 1 : {{rating1}}</p>
+      <div class="form-group">
+        <button mdbBtn color="success" mdbWavesEffect
+          [ngClass]="{'is-invalid': f.submitted && !f.form.valid}">Submit</button>
+      </div>
+    </form>
+  </div>
+
+
+<div class="ratings">
+
+</div>
+
+<h2>Angular 13 Star Rating Example</h2>
+<ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false" (click)="consoleLoguj()"></ngb-rating>

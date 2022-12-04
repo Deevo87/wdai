@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: rgba(250, 235, 215);
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.add_window {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(155, 185, 208);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: black;
+}
+
+.data {
+    width: 100%;
+    display: flex;
+    padding: 2rem;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.name{
+    width: 100%;
+    padding-left: 2rem;
+}
+
+.tel {
+    width: 100%;
+}
+
+input {
+    border: none;
+    border-radius: 5px;
+    height: 2.25rem;
+    width: 90%;
+    font-size: 20px;
+}
+
+.above_input {
+    color: white;
+    font-size: 10px;
+}
+
+.add_btn {
+    width: 9rem;
+    padding: 0.3rem 1rem 0.3rem 1rem;
+    border: none;
+    border-radius: 5px;
+    height: 100%;
+    cursor: pointer;
+    background-color: rgba(71,137,75);
+    color: white;
+}
+
+.btn {
+    padding-right: 2rem;
+}
+
+.delete_btn {
+    background-color: rgba(71,137,75);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.tel_list {
+    width: 100%;
+    align-self: flex-start;
+    list-style: none;
+    padding-left: 0;
+}
+
+.list_elem {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    margin-bottom: 3rem;
+    height: 6rem;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center
+}
+
+.list_data {
+    padding-left: 2rem;
+}
+
+.bin {
+    padding-right: 2rem;
+}
+
+.list_num {
+    font-size: 12px;
+}

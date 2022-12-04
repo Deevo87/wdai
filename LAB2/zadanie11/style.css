@@ -1,0 +1,82 @@
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(209, 209, 209);
+}
+
+.conatiner {
+    width: 20rem;
+    margin-left: 30px;
+    height: fit-content;
+    background-color: rgba(133, 199, 242);
+    border-radius: 15px;
+}
+
+ul.menu li ul, ul li a, ul.menu {
+    list-style: none;
+    color: white;
+    text-decoration: none;
+}
+
+ul.menu {
+    padding: 1rem 0 1rem 0;
+}
+
+ul.menu li ,ul.menu li ul {
+    line-height: 30px;
+    cursor: pointer;
+}
+
+ul.menu label {
+    cursor: pointer;
+}
+
+ul li ul {
+    padding-left: 1rem;
+}
+
+ul.click_menu {
+    background-color: rgba(99, 99, 99);
+}
+
+ul li ul li:hover:before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid rgba(209, 209, 209);
+}
+
+
+input {
+    display: none;
+}
+
+.label_back:hover{
+    width: 100%;
+    background-color: black;
+}
+
+ul.menu li ul {
+    display: none;
+}
+ 
+
+[id^=btn]:checked + ul {
+    display: block;
+    transition: all 3s ease-in-out;
+    
+}
+
+li label {
+    padding-left: 1rem;
+}
+
+ul.click_menu li {
+    padding-left: 1rem;
+}
+

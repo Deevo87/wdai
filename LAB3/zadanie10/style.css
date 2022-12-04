@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.square {
+    width: 40%;
+    height: 50vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.square::before {
+    content: "Naciśnij gdziekolwiek";
+}
+
+
+.errorInfo {
+    height: 2rem;
+}
+
+.dot {
+    background-color: red;
+    z-index: -1;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    transition: all 0.4s ease-in-out;
+}

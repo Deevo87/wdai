@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>zadanie8</title>
+</head>
+<body>
+    <div class="container">
+        <div class="inputs">
+            <div class="password">
+                <p1>New password</p1>
+                <div class="visibility">
+                    <input type="password" class="password_input vis" >
+                    <i><span class="pass eye material-symbols-outlined">visibility</span></i>
+                    
+                </div>
+            </div>
+            <div class="repeat_pass">
+                <p2>Repeat new password</p2>
+                <div class="visibility">
+                    <input type="password" class="password_repeat vis">
+                    <i><span class="pass eye material-symbols-outlined">visibility</span></i>
+                </div>
+            </div>
+        </div>
+        <p class="password_error"></p>
+        <div class="password_req">
+            <h1>Password requirements</h1>
+            <div class="req_space">
+                <i class="cross quantity material-symbols-outlined">cancel</i>
+                <p class="req">at least 8 characters</p>
+            </div>
+            <div class="req_space">
+                <i class="cross special material-symbols-outlined">cancel</i>
+                <p class="req">at least one special character</p>
+            </div>
+            <div class="req_space">
+                <i class="cross capital material-symbols-outlined">cancel</i>
+                <p class="req">at least one capital letter</p>
+            </div>
+            <div class="req_space">
+                <i class="cross digit material-symbols-outlined">cancel</i>
+                <p class="req">at least one digit</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

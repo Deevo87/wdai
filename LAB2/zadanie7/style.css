@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    height: 2000px;
+    background-color: rgba(30, 145, 214);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(25,25,112);
+    border-radius: 20px;
+}
+
+.small_photo {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 2;
+    width: 8rem;
+    height: 12rem;
+}
+
+.main_photo {
+    margin-left: 3rem;
+    width: 100%;
+    margin: auto;
+    height: 40rem;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.big {
+    max-width: 35rem;
+    margin: auto;
+    height: 40rem;
+    border-radius: 10px;
+}
+
+.small {
+    border-radius: 10px;
+}
+
+.controlls {
+    width: 100%;
+    position: relative;
+    top: -3rem;
+    z-index: 99;
+    display: flex;
+    gap: 3rem;
+}
+
+.controlls_mid, .controlls_left {
+    width: fit-content;
+    position: relative;
+    top: -3rem;
+    z-index: 99;
+}
+
+.controlls_mid {
+    align-self: center;
+}
+
+.controlls_left {
+    padding-left: 3rem;
+    align-self: flex-start;
+}
+
+@media (max-width:524px) {
+    .container {
+        min-width: 516px;
+        height: 0;
+    }
+
+    .main_photo {
+        width: 100%;
+    }
+}

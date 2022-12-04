@@ -1,0 +1,226 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(190,240,255);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}   
+
+.all_cards {
+    width: auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.description {
+    background-color: rgba(109,215,253);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    max-width: 30rem;
+    height: 22rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* kiedy klikam lewy */
+.opToLeft {
+    position: absolute;
+    top: auto;
+    height: 22rem;
+    animation: hide-employee-right 4s both;
+}
+
+.visFromRight {
+    visibility: visible !important;
+    position: relative;
+    animation: show-employee-left 2s ease;
+}
+
+/* kiedy klikam prawy */
+.opToRight {
+    position: absolute;
+    top: auto;
+    height: 22rem;
+    animation: hide-employee-left 4s both;
+}
+
+.visFromLeft {
+    position: absolute;
+    top: auto;
+    visibility: visible !important;
+    position: relative;
+    animation: show-employee-right 2s ease;
+}
+
+.hide {
+    position: absolute;
+    opacity: 0;
+}
+
+
+img {
+    width: 140px;
+    height: 140px;
+    border-radius: 5rem;
+}
+
+.nm {
+    font-size: 24px;
+    margin-bottom: 0;
+}
+
+.if {
+    margin: 0;
+}
+
+.jb {
+    color: rgba(0,147,203);
+    margin-top: 0.5rem;
+}
+
+button {
+    color: rgba(0,90,205);
+    border: none;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    padding-top: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.switch {
+    background-color: rgba(190,240,255);
+
+}
+
+.left, .right {
+    background-color: rgba(190,240,255);
+    padding: 0;
+}
+
+.random {
+    background-color: white;
+    padding: 0.7rem;
+    border-radius: 10px;
+}
+
+.randomFadeIn {
+    position: absolute;
+    animation: fade-in 2s both;
+}
+
+.randomFadeOut {
+    animation: fade-out 2s both;
+}
+
+@keyframes hide-employee-left {
+    0% {
+        left: 0;
+    }
+
+    33% {
+        left: 800px;
+    }
+
+    66% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+} 
+
+@keyframes show-employee-right {
+    0% {
+        opacity: 0;
+        left: -500px;
+    }
+    
+    33% {
+        opacity: 1;
+    }
+
+    66% {
+        left: 0;
+    }
+}
+
+@keyframes hide-employee-right {
+    0% {
+        right: 0;
+    }
+
+    33% {
+        right: 800px;
+    }
+
+    66% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+} 
+
+@keyframes show-employee-left {
+    0% {
+        opacity: 0;
+        right: -500px;
+    }
+    
+    33% {
+        opacity: 1;
+    }
+
+    66% {
+        right: 0;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    100% {
+        opacity: 0;
+    }
+    0% {
+        opacity: 1;
+    }
+}

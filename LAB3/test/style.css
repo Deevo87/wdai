@@ -1,0 +1,70 @@
+body{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+main{
+    height: 30vw;
+    width: 80vw;
+    background-color: mediumslateblue;
+    display: flex;
+    justify-content: space-between;
+}
+span{
+    padding: 30px 10px;
+    background-color: blueviolet;
+    max-height: 60px;
+    align-self: center;
+    cursor: pointer;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    overflow: hidden;
+}
+h1{
+    align-self: center;
+}
+h4{
+    color:aqua;
+    align-self: center;
+}
+#position{
+    font-weight: 700;
+    color: white;
+}
+p{
+    align-self: center;
+}
+img{
+    align-self: center;
+    height: 10vw;
+    width: 10vw;
+    min-height: 100px;
+    min-width: 100px;
+    object-fit: cover;
+    clip-path: circle(50% at 50% 50%);
+
+}
+
+.slide{
+    animation-name: slideright;
+    animation-duration: 1s;
+}
+
+button{
+    width: 80px;
+    margin: 0 auto;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 1300px){
+    main{
+        height: 100%;
+    }

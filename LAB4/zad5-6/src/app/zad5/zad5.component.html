@@ -1,0 +1,75 @@
+
+<div class="container">
+    <!-- <h1>Choose car's brand: </h1>
+   <mat-form-field appearance="fill">
+        <mat-label>Car's brand</mat-label>
+        <mat-select [(ngModel)] = "brand" (ngModelChange)="coJestKurwa()">
+            <ng-container *ngIf="ifBrand">
+                <mat-option *ngFor="let brand of carData | keyvalue" [value]="brand">
+                    {{ brand.key }}
+                </mat-option>
+            </ng-container>
+        </mat-select>
+    </mat-form-field>
+
+    <h1>Choose brand's model:</h1>
+    <mat-form-field appearance="fill">
+        <mat-label>Brand's models</mat-label>
+        <mat-select [(ngModel)] = "models" (ngModelChange)="modelDisplay()">
+            <ng-container *ngIf="ifModel">
+                <mat-option *ngFor="let model of carData[brand]" [value]="model">
+                    {{ model.key }}
+                </mat-option>
+                <mat-option value="essa">essa</mat-option>
+            </ng-container>
+        </mat-select>
+    </mat-form-field>
+
+    <h1>Choose model's color:</h1>
+    <mat-form-field appearance="fill">
+        <mat-label>Model's color</mat-label>
+        <mat-select [(ngModel)] = "choosenColor" (ngModelChange)="colorDisplay()">
+            <ng-container *ngIf="ifColor">
+                <mat-option *ngFor="let color of colors">
+                    {{ color }}
+                </mat-option>
+            </ng-container>
+        </mat-select>
+    </mat-form-field> -->
+    <h3>Wybierz markę samochodu</h3>
+  <select [(ngModel)]="brand" (ngModelChange)="brandDisplay()">
+    <ng-container *ngIf="ifBrand">
+      <option disabled selected></option>
+      <option *ngFor="let br of carData | keyvalue">
+        {{ br.key }}
+      </option>
+    </ng-container>
+  </select>
+
+
+  <h3>Wybierz model samochodu</h3>
+  <select [(ngModel)]="models" (ngModelChange)="modelDisplay()">
+    <ng-container *ngIf="ifModel">
+        <option disabled selected></option>
+      <option *ngFor="let model of carData[brand] | keyvalue">
+        {{ model.key }}
+      </option>
+    </ng-container>
+  </select>
+  
+  <h3>Wybierz kolor samochodu</h3>
+  <select [(ngModel)]="choosenColor" (ngModelChange)="colorDisplay()">
+    <ng-container *ngIf="ifColor">
+        <option disabled selected></option>
+      <option *ngFor="let color of colors">
+        {{ color }}
+      </option>
+    </ng-container>
+  </select>
+    
+  <h1>You have choosen</h1>
+  <ng-container *ngIf="selectedCar">
+        {{brand + " " + models + " " + choosenColor}}
+  </ng-container>
+</div>
+    

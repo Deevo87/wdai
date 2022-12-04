@@ -1,0 +1,67 @@
+.display {
+    width: 100%;
+    min-height: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0.3rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.choose-display {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h2 {
+    padding: 2rem 0 0 0;
+    font-size: 30px;
+}
+
+.card {
+    width: 11rem;
+    min-height: 15rem;
+    max-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+h1 {
+    padding-top: 2rem;
+}
+
+.bottom {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+.btn-coint {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 1rem;
+}
+
+.btn {
+    border-radius: 30px;
+    width: fit-content;
+    align-self: center;
+}
+
+.left {
+    text-align: left;
+}

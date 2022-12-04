@@ -1,0 +1,175 @@
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container {
+    width: 20rem;
+    height: 30rem;
+    display: flex;
+    margin: 3rem auto;
+    flex-direction: row;
+    gap:2rem;
+    justify-content: space-evenly;
+    perspective: 150rem;
+}
+
+.card-container {
+    background-color: white;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    box-shadow: 0 4px 12px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.card {
+    margin: auto;
+    width: 100%;
+    height: fit-content;
+    box-shadow: 0 4px 12px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card, .card-back{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.container:hover .card-container {
+    transform: rotateY(180deg);
+}
+
+.bac_photo {
+    position: relative;
+    width: 100%;
+    height: 10rem;
+    background-position: center;
+    background-size: cover;
+}
+
+.orange_photo {
+    background-image: linear-gradient(0deg,rgba(255, 165, 0, 0.5),
+    rgba(255, 165, 0, 0.5)), url(images/cliff_1.jpg);
+}
+
+.green_photo {
+    background-image: linear-gradient(0deg,rgba(144, 238, 144, 0.5),
+    rgba(144, 238, 144, 0.5)), url(images/cliff_2.jpg);
+}
+
+.boxes {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+}
+
+.box {
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    z-index: 99;
+    align-self: flex-end;
+}
+
+.box2 {
+    margin-bottom: 0.5rem;
+}
+
+svg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 8rem;
+    z-index: 1;
+}
+
+.content {
+    color: rgb(128,128,128);
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+p{
+    margin: 1rem;
+}
+
+hr {
+    width: 70%;
+    margin: 0;
+    border: 1px solid #f1f1f1;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.p1 {
+    margin: 0;
+}
+
+.p2 {
+    margin: 0;
+    font-size:50px;
+}
+
+.reserv-btn {
+    margin-top: 7rem;
+    border-radius: 20px;
+    border: none;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    color: rgb(128,128,128);
+    cursor: pointer;
+}
+
+.orange_btn:hover {
+    background-color: rgba(255,99,71);
+}
+
+.orange_card {
+    background: linear-gradient(90deg, rgba(255,215,0), rgb(255,140,0));
+}
+
+.green_btn:hover {
+    background-color: rgba(34,139,34);
+}
+
+.green_card {
+    background: linear-gradient(90deg, rgba(50,205,50), rgb(46,139,87));
+}
+
+.green_boxes {
+    background-color: rgba(144, 238, 144, 0.7);
+}
+
+.orange_boxes {
+    background-color: rgb(255, 140, 0, 0.7);
+}

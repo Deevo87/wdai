@@ -92,3 +92,14 @@ footer {
     background-size: contain;
     background-repeat: no-repeat;
 }
+@media (max-width:900px) and (min-width: 0){
+    .card {
+        width: 90%;
+    }
+}
+
+@media (max-width:1370px) and (min-width: 900px){
+    .card {
+        width: 40%;
+    }
+}

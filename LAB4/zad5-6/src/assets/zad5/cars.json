@@ -1,0 +1,26 @@
+{
+    "Audi": 
+        {
+            "A5": ["Srebrny", "Czerowny", "Granatowy"],
+            "Q7": ["Bordowy", "Czarny", "Biały"],
+            "A7": ["Czerowny", "Niebieski", "Czarny", "Srebrny"],
+            "A8": ["Biały", "Zielony", "Żółty"],
+            "A4": ["Czarny", "Srebrny", "Niebieski"]
+        }
+    ,
+    "Mercedes-Benz":
+        {
+            "CLS": ["Czerowny", "Niebieski", "Czarny", "Srebrny"],
+            "AMG C 43": ["Czarny", "Srebrny", "Niebieski"],
+            "CLA 250": ["Biały", "Zielony", "Żółty"],
+            "AMG SL 55 Roadster": ["Bordowy", "Czarny", "Biały"]
+        }
+    ,
+    "BMW":
+        {
+         "i8": ["Biały", "Zielony", "Żółty"],
+         "3 series": ["Czarny", "Srebrny", "Niebieski"],    
+         "4 series": ["Bordowy", "Czarny", "Biały"],
+         "X1": ["Czerowny", "Niebieski", "Czarny", "Srebrny"]
+        }
+}

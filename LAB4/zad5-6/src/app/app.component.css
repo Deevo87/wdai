@@ -1,0 +1,9 @@
+.zadania {
+    width: 50rem;
+    background-color: rgb(211, 211, 211);
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}

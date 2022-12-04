@@ -8,18 +8,11 @@ body{
     width: 100% auto;
     background-color: #FCEFEF;
     margin: auto;
-    height: 1000px;
+    height: 100vh;
     display: grid;
     grid-template-rows: 1.5fr 1fr 4fr 1fr;
     padding: 0.7rem;
     border: 1px solid black;
-}
-
-.d1 {
-    background-color: #7FD8BE;
-    text-align: center;
-    border: 1px solid black;
-    border-bottom: none;
 }
 
 .logo {
@@ -35,16 +28,9 @@ body{
 
 .pasek {
     background-color: #A1FCDF;
-    display: grid;
     border: 1px solid black;
     padding-left: 0.5rem;
     padding-top: 0.5rem;
-}
-
-.kontent {
-    background-color: #FCD29F;
-    display: grid;
-    grid-template-columns: 1.5fr 3fr 1fr;
 }
 
 .split1{

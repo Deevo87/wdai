@@ -1,0 +1,27 @@
+
+.container {
+    width: 100%;
+    text-align: center;
+}
+
+select {
+    width: 8rem;
+    border: none;
+    text-align: center;
+    padding: 0;
+}
+
+option {
+    text-align: center;
+}
+
+h3 {
+    padding-top: 1rem;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+h1 {
+    padding-top: 2rem;
+    font-size: 20px;
+}

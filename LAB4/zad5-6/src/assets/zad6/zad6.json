@@ -1,0 +1,19 @@
+{
+    "contents" : [
+        {
+            "nav": "The Basics",
+            "txt": "Core Angular basics you need to know",
+            "msg": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit quia nihil dignissimos aperiam totam excepturi autem ipsa enim voluptates iusto."
+        },
+        {
+            "nav": "Components",
+            "txt": "Components are a core concept for building Angular UIs and apps",
+            "msg": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, explicabo aliquam nam quaerat animi doloribus vel sit? Ipsa, perspiciatis consequuntur"
+        },
+        {
+            "nav": "Events",
+            "txt": "Events are important in Angular",
+            "msg": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio adipisci quas quia quasi veniam doloribus repellat odit quae similique nisi."
+        }
+    ]
+}

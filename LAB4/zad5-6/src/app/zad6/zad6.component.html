@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="display">
+        <h1>{{ displayNav() }}</h1>
+        <p class="left">{{ displayMsg() }}</p>
+    </div>
+    <h2>Wybierz temat</h2>
+    <div class="card-container">
+        <div class="choose-display" *ngFor="let card of arr">
+            <div class="card basics">
+                <div class="upper">
+                    <h1>{{ card.nav }}</h1>
+                    <p class="left">{{ card.txt }}</p>
+                </div>
+                <div class="btn-coint">
+                    <button num = 1 class="btn btn-primary"(click)="consoleLog(card, 1)">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="container">
+    <div class="display">
+        <p class="display-p">essa</p>
+    </div>
+    <h2>Wybierz temat</h2>
+    <div class="choose-display">
+        <div class="card basics">
+            <div class="upper">
+                <h1>The Basics</h1>
+                <p class="left">Core Angular basics you need to know</p>
+            </div>
+            <div class="btn-coint">
+                <button class="btn btn-primary">Learn More</button>
+            </div>
+        </div>
+        <div class="card component">
+            <div class="upper">
+                <h1>Components</h1>
+                <p class="left">Components are a core concept for building Angular UIs and apps</p>
+            </div>
+            <div class="btn-coint">
+                <button class="btn btn-primary">Learn More</button>
+            </div>
+        </div>
+        <div class="card events">
+            <div class="upper">
+                <h1></h1>
+                <p class="left">Events are important in Angular</p>
+            </div>
+            <div class="btn-coint">
+                <button class="btn btn-primary">Learn More</button>
+            </div>
+        </div>
+    </div>
+</div> -->
