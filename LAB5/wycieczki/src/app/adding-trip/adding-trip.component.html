@@ -1,0 +1,69 @@
+
+
+<nav class="navbar">
+  <form [formGroup]="tripForm">
+    <div class="container-fluid">
+        <div class="btn">
+            <button class="navbar-toggler add-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span>Dodaj wycieczkę</span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-light bg-light" id="navbarNav">
+          <div class="add-form">
+            <div class="add-form-el mb-3">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Nazwa" name="name" formControlName="tripName">
+              </div>
+              <span *ngIf="formErrors.tripName">{{ formErrors.tripName }}</span>
+            </div>
+            <div class="add-form-el mb-3">
+              <div class="input-group"> 
+                  <input type="text" class="form-control" placeholder="Kraj" name="dest" formControlName="tripDestination">
+              </div>
+              <span *ngIf="formErrors.tripDestination">{{ formErrors.tripDestination }}</span>
+            </div>
+            <div class="add-form-el mb-3">
+              <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Data rozpoczęcia" name="startDate" formControlName="tripStartDate">
+              </div>
+              <span *ngIf="formErrors.tripStartDate">{{ formErrors.tripStartDate }}</span>
+            </div>
+            <div class="add-form-el mb-3">
+              <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Data zakończenia" name="endDate" formControlName="tripEndDate">
+              </div>
+              <span *ngIf="formErrors.tripEndDate">{{ formErrors.tripEndDate }}</span>
+            </div>
+            <div class="add-form-el mb-3">
+              <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Cena" name="price" formControlName="tripUnitPrice">
+                  <span class="input-group-text" id="basic-addon3">zł</span>
+              </div>
+              <span *ngIf="formErrors.tripUnitPrice">{{ formErrors.tripUnitPrice }}</span>
+            </div>
+            <div class="add-form-el mb-3">
+                <div class="input-group">
+                  <input class="form-control" placeholder="Ilość" name="maxQuantity" formControlName="tripMaxQuantity">
+                </div>
+                <span *ngIf="formErrors.tripMaxQuantity">{{ formErrors.tripMaxQuantity }}</span>
+              </div>
+            <div class="add-form-el mb-3">
+              <div class="input-group">
+                <textarea class="form-control" placeholder="Krótki opis" name="shortDesc" formControlName="tripShortDesc"></textarea>
+              </div>
+              <span *ngIf="formErrors.tripShortDesc">{{ formErrors.tripShortDesc }}</span>
+            </div>
+            <div class="add-form-el mb-3">
+              <div class="input-group">
+                  <span class="input-group-text">assets/img/</span>
+                  <input type="text" class="form-control" placeholder="Zdjęcie" name="imageLink" formControlName="tripImageLink">
+                  <span *ngIf="formErrors.tripImageLink">{{ formErrors.tripImageLink }}</span>
+              </div>
+            </div>
+            <button [disabled]="!tripForm.valid" class="add" type="submit" (click)="makeNewTrip()">Dodaj</button>
+          </div>
+        </div>
+      </div>
+  </form>
+    
+  </nav>

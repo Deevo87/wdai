@@ -1,0 +1,125 @@
+{
+    "trips": [
+        {
+            "name": "Niesamowity Madagskar",
+            "destination": "Madagskar",
+            "startData": "20/06/2023",
+            "endData": "27/06/2023",
+            "unitPrice": "2",
+            "maxQuantity": "5",
+            "shortDesc": "Wspaniałe widoki i niezapomniana kuchnia!",
+            "imageLink": "assets/img/madagaskar.jpg",
+            "overallRate": 30,
+            "raitings": 10
+        },
+        {
+            "name": "Wspaniały Oman",
+            "destination": "Oman",
+            "startData": "14/07/2023",
+            "endData": "22/07/2023",
+            "unitPrice": "30",
+            "maxQuantity": "7",
+            "shortDesc": "Niezapomniany wypoczynek w luksusowym hotelu!",
+            "imageLink": "assets/img/oman.jpg",
+            "overallRate": 45,
+            "raitings": 10
+        },
+        {
+            "name": "Gorąca Hiszpania",
+            "destination": "Hiszpania",
+            "startData": "20/06/2023",
+            "endData": "27/06/2023",
+            "unitPrice": "2700",
+            "maxQuantity": "34",
+            "shortDesc": "Pełna wrażeń Hiszpania w wspaniałym kurorcie!",
+            "imageLink": "assets/img/hiszpania.jpg",
+            "overallRate": 39,
+            "raitings": 10
+            
+        },
+        {
+            "name": "Tajemniczy Egipt",
+            "destination": "Egipt",
+            "startData": "05/06/2023",
+            "endData": "14/06/2023",
+            "unitPrice": "3400",
+            "maxQuantity": "56",
+            "shortDesc": "Piramidy w Gizie i rozległe pustynie czekają na ciebie!",
+            "imageLink": "assets/img/egipt.jpeg",
+            "overallRate": 21,
+            "raitings": 10
+        },
+        {
+            "name": "Majestatyczna Austria",
+            "destination": "Austria",
+            "startData": "01/12/2023",
+            "endData": "11/12/2023",
+            "unitPrice": "4000",
+            "maxQuantity": "64",
+            "shortDesc": "Ośnieżone stoki w pieknych górach!",
+            "imageLink": "assets/img/austria.jpg",
+            "overallRate": 30,
+            "raitings": 10
+        },
+        {
+            "name": "Ośnieżone Włochy",
+            "destination": "Włochy",
+            "startData": "01/12/2023",
+            "endData": "14/12/2023",
+            "unitPrice": "800",
+            "maxQuantity": "71",
+            "shortDesc": "Wspaniałe wrażenia i niesamowity klimat!",
+            "imageLink": "assets/img/włochy.jpg",
+            "overallRate": 30,
+            "raitings": 10
+        },
+        {
+            "name": "Narty w Turcji",
+            "destination": "Turcja",
+            "startData": "27/12/2023",
+            "endData": "6/12/2024",
+            "unitPrice": "5600",
+            "maxQuantity": "79",
+            "shortDesc": "Nieznane oblicze turcji!",
+            "imageLink": "assets/img/turcja.jpg",
+            "overallRate": 30,
+            "raitings": 10
+        },
+        {
+            "name": "Bożonarodzeniowe Jarmarki",
+            "destination": "Czechy",
+            "startData": "16/12/2023",
+            "endData": "23/12/2023",
+            "unitPrice": "2700",
+            "maxQuantity": "44",
+            "shortDesc": "Świąteczny klimat w pieknych Czechach!",
+            "imageLink": "assets/img/czechy.jpg",
+            "overallRate": 30,
+            "raitings": 10
+        },
+        {
+            "name": "Bajkowy Weekend",
+            "destination": "Francja",
+            "startData": "07/06/2023",
+            "endData": "09/06/2023",
+            "unitPrice": "1700",
+            "maxQuantity": "69",
+            "shortDesc": "Bajkowy wyjazd w bajecznym miejscu!",
+            "imageLink": "assets/img/francja.jpg",
+            "overallRate": 30,
+            "raitings": 10
+        },
+        {
+            "name": "Batumi Herbatumi",
+            "destination": "Gruzja",
+            "startData": "20/08/2023",
+            "endData": "27/08/2023",
+            "unitPrice": "3800",
+            "maxQuantity": "59",
+            "shortDesc": "Zapomniana Gruzja z wspaniałymi potrawami!",
+            "imageLink": "assets/img/Gruzja.jpg",
+            "overallRate": 30,
+            "raitings": 10
+        }
+    ]
+}
