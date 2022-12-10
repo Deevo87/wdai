@@ -22,11 +22,13 @@ export class ConfigService {
   constructor(private http: HttpClient) { }
 
   getPosts(){
-    this.http.get<Post[]>(this.path).subscribe((data: Post[]) => this.posts = data)
+    this.http.get<Post[]>(this.path)
+    .subscribe((data: Post[]) => this.posts = data)
   }
 
   addPost(post: Post) {
-    this.http.post<Post>(this.path, post).subscribe((data: Post) => this.posts.push(data))
+    this.http.post<Post>(this.path, post)
+    .subscribe((data: Post) => this.posts.push(data))
   }
 }
 

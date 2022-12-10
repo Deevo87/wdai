@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Lista wycieczek</h1>
-    <app-adding-trip (formSubmitTrip)="addingSubmitedTrip($event)" ></app-adding-trip>
+    <!-- <app-adding-trip (formSubmitTrip)="addingSubmitedTrip($event)" ></app-adding-trip> -->
     <app-trip-filters></app-trip-filters>
     <div class="tripsCnt" [ngStyle]="{
         'background-color': changeTripCnt(trips) > 10 ? 'lime' : 'tomato'}">

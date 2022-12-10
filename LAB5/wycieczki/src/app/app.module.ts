@@ -9,6 +9,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TripRatingComponent } from './trip-rating/trip-rating.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TripFiltersComponent } from './trip-filters/trip-filters.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { StartComponent } from './start/start.component';
+import { BasketComponent } from './basket/basket.component';
+import { HeaderComponent } from './start/header/header.component';
+import { FooterComponent } from './start/footer/footer.component';
 
 
 @NgModule({
@@ -18,6 +23,11 @@ import { TripFiltersComponent } from './trip-filters/trip-filters.component';
     AddingTripComponent,
     TripRatingComponent,
     TripFiltersComponent,
+    NavbarComponent,
+    StartComponent,
+    BasketComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

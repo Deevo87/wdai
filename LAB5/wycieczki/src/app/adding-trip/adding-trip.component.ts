@@ -79,7 +79,6 @@ export class AddingTripComponent implements OnInit {
       tripImageLink: ['', [Validators.required, Validators.pattern('[A-Za-z]+([_-]+[A-Za-z]+)?[.][a-z]+')]],
     })
     this.tripForm.valueChanges.pipe(debounceTime(1000)).subscribe((value) => {
-      console.log('o co chodzi wtf')
       this.onControlValueChanged()
      })
      this.onControlValueChanged()
@@ -109,7 +108,6 @@ export class AddingTripComponent implements OnInit {
   makeNewTrip() {
     console.log(this.tripForm)
       if (!this.tripForm.valid) {
-        console.log('chuj')
         return
       }
     let newTrip = {

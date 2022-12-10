@@ -8,16 +8,20 @@ import { Photo } from '../interfaces/IPhotos';
   providedIn: 'root'
 })
 export class PhotosService {
-  path: string = "https://jsonplaceholder.typicode.com/photos"
+  path: string = "https://jsonplaceholder.typicode.com/photos/?_limit=100"
+  pathAll: string = "https://jsonplaceholder.typicode.com/photos/"
   photos: Photo[] = []
 
   constructor(private http: HttpClient) { }
 
   getPhotos() {
-    this.http.get<Photo[]>(this.path).subscribe((data: Photo[]) => this.photos = data)
+    this.http.get<Photo[]>(this.path)
+    .subscribe((data: Photo[]) => this.photos = data)
   }
 
   getPhoto(id: number) {
-    this.http.get<Photo>(this.path + id)
+    console.log(this.http.get<Photo>(this.pathAll + id))
+    return this.http.get<Photo>(this.pathAll + id)
+    // return this.photosMap.get(albumId)?.get(id)
   }
 }
