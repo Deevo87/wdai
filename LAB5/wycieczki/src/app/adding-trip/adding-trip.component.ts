@@ -2,6 +2,8 @@ import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {FormBuilder, FormGroup, FormControl} from '@angular/forms'
 import {Validators } from '@angular/forms'
 import { debounceTime} from 'rxjs/operators';
+import { Trip } from '../Trip';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-adding-trip',
@@ -21,7 +23,9 @@ export class AddingTripComponent implements OnInit {
     tripUnitPrice: '',
     tripMaxQuantity: '',
     tripShortDesc: '',
-    tripImageLink: ''
+    tripImageLink1: '',
+    tripImageLink2: '',
+    tripImageLink3: ''
   }
 
   private validationMessages = {
@@ -54,17 +58,27 @@ export class AddingTripComponent implements OnInit {
       minlength: 'Minimum 20 znaków.',
       maxlength: 'Maksimum 60 znaków.'
     },
-    tripImageLink: {
+    tripImageLink1: {
       required: 'Zdjęcie jest wymagane!',
-      pattern: 'Poprawny format dla zdjęcia to "[nazwa].[opowiedni format]"'
+      minlength: 'Zdjęcie musi być w postaci linku!'
+    },
+    tripImageLink2: {
+      required: 'Zdjęcie jest wymagane!',
+      minlength: 'Zdjęcie musi być w postaci linku!'
+    },
+    tripImageLink3: {
+      required: 'Zdjęcie jest wymagane!',
+      minlength: 'Zdjęcie musi być w postaci linku!'
     },
   }
 
-  constructor(private formBuilder : FormBuilder) { }
+  constructor(private formBuilder : FormBuilder, private dataService: DataService) { }
 
 
   addNewItem(newTrip: Trip) {
-    this.formSubmitTrip.emit(newTrip)
+    // this.formSubmitTrip.emit(newTrip)
+    this.dataService.createTrip(newTrip)
+    
   }
 
   ngOnInit(): void {
@@ -76,7 +90,9 @@ export class AddingTripComponent implements OnInit {
       tripUnitPrice: ['', [Validators.required, Validators.pattern('[0-9]+')]],
       tripMaxQuantity: ['', [Validators.required, Validators.pattern('[0-9]+')]],
       tripShortDesc: ['', [Validators.required, Validators.minLength(20), Validators.maxLength(60)]],
-      tripImageLink: ['', [Validators.required, Validators.pattern('[A-Za-z]+([_-]+[A-Za-z]+)?[.][a-z]+')]],
+      tripImageLink1: ['', [Validators.required, Validators.minLength(12)]],
+      tripImageLink2: ['', [Validators.required, Validators.minLength(12)]],
+      tripImageLink3: ['', [Validators.required, Validators.minLength(12)]],
     })
     this.tripForm.valueChanges.pipe(debounceTime(1000)).subscribe((value) => {
       this.onControlValueChanged()
@@ -111,14 +127,19 @@ export class AddingTripComponent implements OnInit {
         return
       }
     let newTrip = {
+      id: this.dataService.getID(),
       name: this.tripForm.get('tripName')!.value,
       destination: this.tripForm.get('tripDestination')!.value,
-      startData: this.tripForm.get('tripStartDate')!.value,
-      endData: this.tripForm.get('tripEndDate')!.value,
+      startDate: this.tripForm.get('tripStartDate')!.value,
+      endDate: this.tripForm.get('tripEndDate')!.value,
       unitPrice: this.tripForm.get('tripUnitPrice')!.value,
       maxQuantity: this.tripForm.get('tripMaxQuantity')!.value,
+      avaible: this.tripForm.get('tripMaxQuantity')!.value,
+      reserved: 0,
       shortDesc: this.tripForm.get('tripShortDesc')!.value,
-      imageLink: 'assets/img/' + this.tripForm.get('tripImageLink')!.value,
+      imageLink1: this.tripForm.get('tripImageLink1')!.value,
+      imageLink2: this.tripForm.get('tripImageLink2')!.value,
+      imageLink3: this.tripForm.get('tripImageLink3')!.value,
       counter: 0,
       overallRate: 0,
       raitings: 0
@@ -127,19 +148,19 @@ export class AddingTripComponent implements OnInit {
     this.tripForm.reset()
   }
 }
-export interface Trip {
-  name: string
-  destination: string
-  startData: string
-  endData: string
-  unitPrice: number
-  maxQuantity: number
-  shortDesc: string
-  imageLink: string
-  counter: number
-  overallRate: any
-  raitings: number
-}
+// export interface Trip {
+//   name: string
+//   destination: string
+//   startData: string
+//   endData: string
+//   unitPrice: number
+//   maxQuantity: number
+//   shortDesc: string
+//   imageLink: string
+//   counter: number
+//   overallRate: any
+//   raitings: number
+// }
 
   // tripForm = new FormGroup({
   //   tripName: new FormControl(['', [Validators.required, Validators.pattern('[A-Z]{1}[a-złćźężąóu]+([ ][A-Z]{1}[a-złćźężąóu]+)?')]]),

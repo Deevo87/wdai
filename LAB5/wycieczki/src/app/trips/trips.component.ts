@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { max } from 'rxjs';
+import { DataService } from '../services/data.service';
+// import { Trip } from '../Trip';
+// import { BasketService } from '../services/basket.service';
 
 @Component({
   selector: 'app-trips',
@@ -8,45 +10,97 @@ import { max } from 'rxjs';
 })
 
 
-export class TripsComponent {
-  trips: Trip[] = []
-  ngOnInit(): void {
-    fetch('./assets/tripsData.json').then(res => res.json())
-    .then(json => {
-      for (let i in json["trips"]) {
-        this.trips.push({
-          name: json["trips"][i]["name"],
-          destination: json["trips"][i]["destination"],
-          startData: json["trips"][i]["startData"],
-          endData: json["trips"][i]["endData"],
-          unitPrice: json["trips"][i]["unitPrice"],
-          maxQuantity: json["trips"][i]["maxQuantity"],
-          shortDesc: json["trips"][i]["shortDesc"],
-          imageLink: json["trips"][i]["imageLink"],
-          counter: 0,
-          overallRate: json["trips"][i]["overallRate"],
-          raitings: json["trips"][i]["raitings"]
-        } as Trip)
-      }
-    });
+export class TripsComponent implements OnInit{
+  constructor(public dataService: DataService) {
+    // console.log(this.trips)
+    // console.log(this.dataService.printData())
+    // this.dataService.createTrip()
   }
+  qua!: number
+  suma!: number
+  // trips: Trip[] = []
+  trips!: Trip[]
+  ngOnInit(): void {
+    this.dataService.getTrips().subscribe(change => {
+      this.trips = []
+      this.suma = 0
+      this.qua = 0
+      for(let trip of change) {
+        if (trip.reserved > 0) {
+          this.suma += +trip.reserved * trip.unitPrice
+          this.qua += +trip.reserved
+        }
+        this.trips.push({
+          id: trip.id,
+          name: trip.name,
+          destination: trip.destination,
+          startDate: trip.startDate,
+          endDate: trip.endDate,
+          unitPrice: trip.unitPrice,
+          maxQuantity: trip.maxQuantity,
+          avaible: trip.avaible,
+          shortDesc: trip.shortDesc,
+          longDesc: trip.longDesc,
+          imageLink1: trip.imageLink1,
+          imageLink2: trip.imageLink2,
+          imageLink3: trip.imageLink3,
+          counter: trip.counter,
+          overallRate: trip.overallRate,
+          raitings: trip.raitings,
+          reserved: trip.reserved
+        })
+      }
+    })
+    // fetch('./assets/tripsData.json').then(res => res.json())
+    // .then(json => {
+    //   for (let i in json["trips"]) {
+    //     this.trips.push({
+    //       id: json["trips"][i]["id"],
+    //       name: json["trips"][i]["name"],
+    //       destination: json["trips"][i]["destination"],
+    //       startDate: json["trips"][i]["startDate"],
+    //       endDate: json["trips"][i]["endDate"],
+    //       unitPrice: json["trips"][i]["unitPrice"],
+    //       maxQuantity: json["trips"][i]["maxQuantity"],
+    //       avaible: json["trips"][i]["avaible"],
+    //       shortDesc: json["trips"][i]["shortDesc"],
+    //       longDesc: json["trips"][i]["longDesc"],
+    //       imageLink1: json["trips"][i]["imageLink1"],
+    //       imageLink2: json["trips"][i]["imageLink2"],
+    //       imageLink3: json["trips"][i]["imageLink3"],
+    //       counter: 0,
+    //       overallRate: json["trips"][i]["overallRate"],
+    //       raitings: json["trips"][i]["raitings"],
+    //       reserved: 0,
+    //     } as Trip)
+    //   }
+    //   console.log(this.trips)
+    //   for (let i= 0; i < this.trips.length; i++) {
+    //     console.log(this.trips[i])
+    //     this.dataService.createTrip(this.trips[i])
+    //   }
+    // });
 
-  constructor() {
-    console.log(this.trips)
   }
 
   addingTickets(trip: Trip) {
+    console.log(this.trips)
     if (trip.maxQuantity > 0) {
       trip.counter += 1
       trip.maxQuantity -= 1
+      trip.reserved += 1
     }
+    this.dataService.updateQuantity(trip.id, trip.maxQuantity, trip.reserved)
   }
 
   removingTickets(trip: Trip) {
-    if (trip.counter > 0) {
+    if (trip.maxQuantity < trip.avaible) {
       trip.counter -= 1
       trip.maxQuantity += 1
-    } 
+      trip.reserved -= 1
+    }
+    console.log(trip.reserved + ' ' + 'reserved')
+    this.dataService.updateQuantity(trip.id, trip.maxQuantity, trip.reserved)
   }
 
   changeTripCnt(trip: Trip[]) {
@@ -56,6 +110,7 @@ export class TripsComponent {
     } 
     return cnt
   }
+
   expensiveTrip(trip: Trip) {
     let highest = -1
     let highestTmp = -1
@@ -85,12 +140,13 @@ export class TripsComponent {
   }
 
   deleteTrip(trip: Trip) {
-    for (let i = 0; i < this.trips.length; i++) {
-      if (trip == this.trips[i]) {
-        this.trips.splice(i, 1)
-        return
-      }
-    }
+    // this.valueInCart -= trip.unitPrice * trip.reserved
+    // this.tripsInCart -= trip.reserved
+    this.dataService.updateQuantity(trip.id, 0, 0)
+    this.trips = this.trips.filter((elem) => {
+      return elem != trip
+    })
+    this.dataService.deleteTrip(trip)
   }
 
   addingSubmitedTrip(newTrip: Trip) {
@@ -102,23 +158,47 @@ export class TripsComponent {
     trip.raitings += 1
     trip.overallRate = +trip.overallRate
     trip.overallRate += rate
-    console.log(typeof(trip.overallRate))
-    console.log(rate)
-    console.log(trip.overallRate)
+  }
+
+  checkIfWorks() {
+    console.log(this.dataService.daneRef)
+  }
+
+  calculate(flag: number) {
+    let suma = 0
+    let q = 0
+    this.dataService.getTrips().subscribe(change => {
+      for(let trip of change) {
+        console.log(trip)
+        suma += +trip.unitPrice
+        q += +trip.reserved
+      }
+    })
+    if (flag === 1) {
+      return suma
+    } else {
+      return q
+    }
   }
 }
   
 
 export interface Trip {
+  id: number
   name: string
   destination: string
-  startData: string
-  endData: string
+  startDate: string
+  endDate: string
   unitPrice: number
   maxQuantity: number
+  avaible: number
   shortDesc: string
-  imageLink: string
+  longDesc: string
+  imageLink1: string
+  imageLink2: string
+  imageLink3: string
   counter: number
   overallRate: any
   raitings: number
+  reserved: number
 }

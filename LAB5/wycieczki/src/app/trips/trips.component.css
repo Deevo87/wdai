@@ -1,13 +1,22 @@
+
 .container {
-    width: 100%;
-    background-color: rgba(255,202,123);
+    min-width: 100%;
+    /* background-color: rgba(255,202,123); */
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .trips-list {
+    width: 80%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -25,7 +34,6 @@
     color: white;
     overflow: hidden;
 }
-
 .image {
     text-align: center;
     /* background-color: 	rgba(255,114,81); */
@@ -158,4 +166,48 @@ span {
 
 .raitings {
     padding-left: 0.6rem;
+}
+
+.info {
+    width: 100%;
+    height: 20vh;
+    background-color: rgb(249, 191, 59);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    letter-spacing: 8px;
+}
+
+
+.basketInfo {
+    align-self: flex-end;
+    width: fit-content;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.btnBasket {
+    cursor: pointer;
+    border: none;
+    background-color: rgb(208, 0, 27);
+    border-radius: 15px;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.btnContainer{
+    text-align: right;
 }

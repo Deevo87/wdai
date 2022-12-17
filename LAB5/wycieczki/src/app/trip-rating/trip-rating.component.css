@@ -1,8 +1,7 @@
 .ratings {
     padding: 0 0.5rem 0 0.5rem;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 p {
@@ -10,7 +9,22 @@ p {
     margin: 0;
 }
 
-.desc {
+
+.stars {
+    width: 10rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.rateUs {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.desc {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 }

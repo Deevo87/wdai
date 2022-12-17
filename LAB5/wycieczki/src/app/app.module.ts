@@ -15,6 +15,14 @@ import { BasketComponent } from './basket/basket.component';
 import { HeaderComponent } from './start/header/header.component';
 import { FooterComponent } from './start/footer/footer.component';
 
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from './environments/environment';
+import { HistoryComponent } from './history/history.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SingleTripViewComponent } from './single-trip-view/single-trip-view.component';
+import { PostsComponent } from './posts/posts.component';
+import { DisplayPostsComponent } from './display-posts/display-posts.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +36,20 @@ import { FooterComponent } from './start/footer/footer.component';
     BasketComponent,
     HeaderComponent,
     FooterComponent,
+    HistoryComponent,
+    PageNotFoundComponent,
+    SingleTripViewComponent,
+    PostsComponent,
+    DisplayPostsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

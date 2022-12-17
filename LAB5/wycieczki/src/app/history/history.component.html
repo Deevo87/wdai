@@ -1,0 +1,64 @@
+<div class="main" >
+    <div class="info">
+        <h1>Historia zakupu</h1>
+    </div>
+    <div class="back" [routerLink]="['/basket']" routerLinkActive="active">
+        <a routerLink="/basket">powrót do koszyka</a>
+        <!-- <a routerLink="/trips"><span class="material-symbols-outlined">arrow_back</span></a> -->
+    </div>
+    <div class="el-container">
+        <div class="element-empty">
+            <div class="fakePhoto">
+            </div>
+            <div class="tripInfo">
+                <div class="about">
+                    <div class="name con">
+                        <p class="item">nazwa</p>
+                    </div>
+                    <div class="price con">
+                        <p class="item">cena</p>
+                    </div>
+                    <div class="quantity con">
+                        <p class="item">ile kupionych</p>
+                    </div>
+                </div>
+                <div class="fakeStatus">
+                    <div class="buy">
+                        status
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="el-container">
+        <div class="element" *ngFor="let bought of boughtTrips">
+            <!-- <a routerLink="['basket']"></a> -->
+            <div class="photo">
+                <img src="{{ bought.imageLink1 }}" alt="">
+            </div>
+            <div class="tripInfo">
+                <div class="about">
+                    <div class="name con">
+                        <p class="item">{{ bought.name }}</p>
+                    </div>
+                    <div class="price con">
+                        <p class="item">{{ bought.unitPrice }}</p>
+                    </div>
+                    <div class="quantity con">
+                        <p class="item">{{ bought.bought }}</p>
+                    </div>
+                </div>
+                <div class="status">
+                    <div class="buy">
+                        <button type="button" class="btn btn-primary" *ngIf="bought.status == 0">Nadchodząca</button>
+                        <button type="button" class="btn btn-danger" *ngIf="bought.status == 1">ZAKOŃCZONA</button>
+                        <button type="button" class="btn btn-success" *ngIf="bought.status == -1">W TRAKCIE</button>
+                        <!-- <p class="st">{{ displayMsg(bought) }}</p> -->
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>
