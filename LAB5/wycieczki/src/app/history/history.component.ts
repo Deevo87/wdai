@@ -13,11 +13,20 @@ export class HistoryComponent implements OnInit{
   constructor(private dataService: DataService) {
     
   }
+  actualCurrency = this.dataService.currency
+
+  IsDuring!: boolean
+  IsCompleted!: boolean
+  IsUpcoming!: boolean
+
   boughtTrips!: BoughtTrip[]
   suma!: number
   qua!: number
   ngOnInit(): void {
-    this.dataService.getBought().subscribe(change => {
+      this.IsDuring = false
+      this.IsCompleted = false
+      this.IsUpcoming = false
+      this.dataService.getBought().subscribe(change => {
       this.boughtTrips = []
       this.suma = 0
       this.qua = 0
@@ -54,6 +63,12 @@ export class HistoryComponent implements OnInit{
       msg = "ZAOŃCZONA"
     }
     return msg
+  }
+
+  printChecks() {
+    console.log(this.IsUpcoming)
+    console.log(this.IsDuring)
+    console.log(this.IsCompleted)
   }
 
 }

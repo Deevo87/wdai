@@ -2,8 +2,8 @@
     "trips": [
         {
             "id": 1,
-            "name": "Niesamowity Madagskar",
-            "destination": "Madagskar",
+            "name": "Niesamowity Madagaskar",
+            "destination": "Madagaskar",
             "startDate": "20/06/2021",
             "endDate": "27/06/2021",
             "unitPrice": "2",

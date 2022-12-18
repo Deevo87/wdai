@@ -23,6 +23,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { SingleTripViewComponent } from './single-trip-view/single-trip-view.component';
 import { PostsComponent } from './posts/posts.component';
 import { DisplayPostsComponent } from './display-posts/display-posts.component';
+import { HistoryFilterPipe } from './pipes/history-filter.pipe';
+import { BasketInfoComponent } from './basket-info/basket-info.component';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,9 @@ import { DisplayPostsComponent } from './display-posts/display-posts.component';
     SingleTripViewComponent,
     PostsComponent,
     DisplayPostsComponent,
+    HistoryFilterPipe,
+    BasketInfoComponent,
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ export class BasketComponent implements OnInit{
 
   constructor(private dataService: DataService, private setDate: SetDateService) {}
 
+  acutalCurrency = this.dataService.currency
   history!: BoughtTrip[]
   basket!: Trip[]
   ngOnInit(): void {
@@ -58,7 +59,7 @@ export class BasketComponent implements OnInit{
     console.log(trip)
     let setted = this.setDate.setStatus(trip)
     let bought = {
-      id: trip.id,
+      id: this.dataService.getLastBoughtID(),
       name: trip.name,
       destination: trip.destination,
       startDate: trip.startDate,
@@ -71,6 +72,7 @@ export class BasketComponent implements OnInit{
       status: setted
     }
     this.dataService.updateQuantity(trip.id, trip.maxQuantity, 0)
+    this.dataService.updateAvaible(trip.id, trip.avaible - trip.reserved)
     this.dataService.addToBought(bought)
   }
 

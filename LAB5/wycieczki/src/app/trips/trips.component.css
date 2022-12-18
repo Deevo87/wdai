@@ -34,8 +34,14 @@
     color: white;
     overflow: hidden;
 }
+
+.link {
+    height: 7rem;
+}
+
 .image {
     text-align: center;
+    height: 100%;
     /* background-color: 	rgba(255,114,81); */
 }
 
@@ -44,6 +50,7 @@ img {
     height: 6rem;
     border-radius: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    z-index: 10;
 }
 
 p {
@@ -211,3 +218,10 @@ h1 {
 .btnContainer{
     text-align: right;
 }
+
+.notifications {
+    position: relative;
+    left: 83%;
+    top: -7rem;
+}
+

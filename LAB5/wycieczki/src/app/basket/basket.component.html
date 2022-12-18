@@ -43,7 +43,7 @@
                         <p class="item">{{trip.name}}</p>
                     </div>
                     <div class="price con">
-                        <p class="item">{{ trip.unitPrice }}</p>
+                        <p class="item">{{ trip.unitPrice | currency: acutalCurrency}}</p>
                     </div>
                     <div class="quantity con">
                         <p class="item">{{ trip.reserved }}</p>

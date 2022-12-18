@@ -11,6 +11,8 @@ import { Post } from '../Iposts';
 })
 export class SingleTripViewComponent implements OnInit {
 
+  actualCurrency = this.dataService.currency
+
   trip!: Trip | undefined
   id!: number
 

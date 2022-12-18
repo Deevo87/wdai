@@ -7,7 +7,6 @@ import { Trip } from '../Trip';
 })
 export class SetDateService {
   currDate = new Date()
-  currency = 'EUR'
 
   constructor() { }
 
@@ -17,7 +16,7 @@ export class SetDateService {
 
   setStatus(bought: Trip | BoughtTrip) { // -1 w trkacie, 0 nadchodząca, 1 zakończona
     let status = 1
-    const [day1, month1, year1] = bought.startDate.split('/') // idk czy działa
+    const [day1, month1, year1] = bought.startDate.split('/')
     const startDate = new Date(+year1, +month1 - 1, +day1)
     console.log(startDate)
     console.log(this.currDate)

@@ -16,8 +16,11 @@ export class TripsComponent implements OnInit{
     // console.log(this.dataService.printData())
     // this.dataService.createTrip()
   }
+  actualCurrency = this.dataService.currency
+
   qua!: number
   suma!: number
+  tripToPass!: Trip
   // trips: Trip[] = []
   trips!: Trip[]
   ngOnInit(): void {

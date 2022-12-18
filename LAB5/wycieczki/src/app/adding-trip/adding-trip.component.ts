@@ -12,6 +12,7 @@ import { DataService } from '../services/data.service';
 })
 export class AddingTripComponent implements OnInit {
   @Output() formSubmitTrip = new EventEmitter<Trip>()
+  actualCurrency = this.dataService.currency
 
   tripForm !: FormGroup
 

@@ -1,4 +1,5 @@
 <div class="main">
+    
     <div class="nav-elements">
         <div class="logo">
             <img src="assets/img/trippin_logo.png" alt="">
@@ -17,14 +18,25 @@
                 </a>
             </div>
             <div class="nav-link">
-                <a class="link" routerLink="history" routerLinkActive="active">Historia</a>
+                <a class="link" routerLink="history" routerLinkActive="active">
+                    <span class="material-symbols-outlined">history</span>
+                </a>
             </div>
             <div class="basket">
                 <a class="link" routerLink="basket" routerLinkActive="active">
                     <span class="material-symbols-outlined">shopping_basket</span>
                 </a>
             </div>
+            <div class="userInfo nav-link">
+                <a class="link">
+                    <span class="material-symbols-outlined">person</span>
+                </a>
+            </div>
+            <div class="basketInfo">
+                <app-basket-info></app-basket-info>
+            </div>
             <!-- </div> -->
         </div>
+
     </div>
 </div>

@@ -41,7 +41,7 @@
         <p class="desc">{{ trip?.longDesc}}</p>
         <div class="bottom">
             <div class="lay">
-                <p class="price">{{ trip?.unitPrice | currency: 'EUR'}}</p>
+                <p class="price">{{ trip?.unitPrice | currency: actualCurrency}}</p>
                 <div class="chan-amount">
                     <div class="add">
                         <span *ngIf="trip!.maxQuantity > 0" class="material-symbols-outlined btn1" (click)="addingTickets()">add</span>

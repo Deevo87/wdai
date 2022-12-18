@@ -5,31 +5,21 @@
     <div class="filters">
         <app-trip-filters></app-trip-filters>
     </div>
-    <div class="basketInfo">
-        <div class="infoContainer">
-            <div class="btnContainer">
-                <button class="btnBasket" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                  W koszyku 
-                </button>
-            </div>
-            <div class="collapse" id="collapseExample">
-                <div class="card card-body">
-                    <p class="quan">ilość: {{ qua }}</p>
-                    <p class="suma">suma: {{ suma | currency: 'EUR'}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="trips-list">
         <div class="trip-card" [ngClass]="{
             'expensive': expensiveTrip(trip),
             'cheapest': cheapestTrip(trip)
         }" *ngFor="let trip of trips">
-            <a routerLink="/trip-view/{{ trip.id }}">
-                <div class="image">
-                    <img src={{trip.imageLink1}} alt="">
-                </div>   
-            </a>
+            <div class="link">
+                <a routerLink="/trip-view/{{ trip.id }}">
+                    <div class="image">
+                        <img src={{trip.imageLink1}} alt="">
+                    </div>   
+                </a>
+                <div class="notifications">
+                    <app-notification [tripToPass]="trip"></app-notification>
+                </div>
+            </div>
             <div class="card-header">
                 <p class="name">{{ trip.name | uppercase }}</p>
             </div>
@@ -40,7 +30,7 @@
             <p class="desc">{{ trip.shortDesc}}</p>
             <div class="bottom">
                 <div class="lay">
-                    <p class="price">cena: {{ trip.unitPrice | currency: 'EUR'}}</p>
+                    <p class="price">cena: {{ trip.unitPrice | currency: actualCurrency}}</p>
                     <div class="chan-amount">
                         <div class="add">
                             <span *ngIf="trip.maxQuantity > 0" class="material-symbols-outlined btn1" (click)="addingTickets(trip)">add</span>

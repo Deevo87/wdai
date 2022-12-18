@@ -33,7 +33,7 @@
             <div class="add-form-el mb-3">
               <div class="input-group">
                   <input type="text" class="form-control" placeholder="Cena" name="price" formControlName="tripUnitPrice">
-                  <span class="input-group-text currency" id="basic-addon3">EUR</span>
+                  <span class="input-group-text currency" id="basic-addon3">{{ actualCurrency }}</span>
               </div>
               <span *ngIf="formErrors.tripUnitPrice">{{ formErrors.tripUnitPrice }}</span>
             </div>

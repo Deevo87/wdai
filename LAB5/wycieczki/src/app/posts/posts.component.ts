@@ -26,11 +26,12 @@ export class PostsComponent implements OnInit{
   private validationMessages = {
     postName: {
       required: 'Nazwa jest wymagana!',
-      pattern: 'Poprawny format nazwy to np. "Gorąca Antarktyda".'
+      minlength: 'Minimum 3 znaki.'
     },
     postTripName: {
-      required: 'Miejsce wycieczki jest wymagane!',
-      minlength: 'Minimum 3 znaki.'
+      required: 'Nazwa wycieczki jest wymagana!',
+      pattern: 'Poprawny format nazwy to np. "Gorąca Antarktyda".'
+
     },
     postShortDesc: {
       required: 'Opis jest wymagany!',
@@ -49,8 +50,8 @@ export class PostsComponent implements OnInit{
 
   ngOnInit(): void {
     this.postForm = this.formBuilder.group({
-      postName: ['', [Validators.required, Validators.pattern('[A-Z]{1}[a-złćźężąóu]+([ ][A-Z]{1}[a-złćźężąóu]+)?')]],
-      postTripName: ['', [Validators.required, Validators.minLength(3)]],
+      postTripName: ['', [Validators.required, Validators.pattern('[A-Z]{1}[a-złćźężąóu]+[ ][A-Z]{1}[a-złćźężąóu]+')]],
+      postName: ['', [Validators.required, Validators.minLength(3)]],
       postStartDate: [''],
       postShortDesc: ['', [Validators.required, Validators.minLength(20), Validators.maxLength(500)]],
     })

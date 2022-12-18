@@ -14,9 +14,13 @@ export class DataService {
   boughtRef = this.db.collection('bought')
   daneRef = this.db.collection('trips')
   next!: number
+  boughtID!: number
+  currency = 'USD'
+
 
   constructor(private db: AngularFirestore) { 
     this.daneRef.get().subscribe(change => this.next = change.size)
+    this.boughtRef.get().subscribe(change => this.boughtID = change.size)
    }
 
   createTrip(trip: Trip) {
@@ -44,6 +48,10 @@ export class DataService {
     this.daneRef.doc(id+'').update({reserved: reserved});
   }
 
+  updateAvaible(id: number, avaible: number) {
+    this.daneRef.doc(id+'').update({ avaible: avaible })
+  }
+
   deleteTrip(trip: Trip) {
     this.daneRef.doc(trip.id + '').delete()
   }
@@ -51,6 +59,11 @@ export class DataService {
   getID() {
     this.next += 1
     return this.next
+  }
+
+  getLastBoughtID() {
+    this.boughtID += 1
+    return this.boughtID
   }
 
 

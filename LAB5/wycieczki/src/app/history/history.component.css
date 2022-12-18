@@ -41,12 +41,8 @@ img {
     height: 100%;
 }
 
-.fakePhoto {
-    width: 24rem;
-}
-
-.fakeStatus {
-    padding-right: 4%;
+.itemInfo {
+    text-align: center;
 }
 
 .status {
@@ -71,14 +67,6 @@ h1 {
     background-color: rgb(249, 191, 59);
 }
 
-.element-empty {
-    display: flex;
-    flex-direction: row;
-    width: 60vw;
-    min-width: fit-content;
-}
-
-
 .tripInfo {
     display: flex;
     width: 100%;
@@ -94,9 +82,6 @@ h1 {
     align-items: center;
 }
 
-.con {
-    max-width: 15%;
-}
 
 .quantity {
     max-width: none;
@@ -106,20 +91,13 @@ h1 {
     text-align: center;
 }
 
-.editInfo {
-    align-self: center;
-    padding-right: 4%;
-}
-
-.remove {
-    width: 100%;
-    text-align: center;
-}
-
 span {
     cursor: pointer;
 }
 
+.buy {
+    padding-right: 1rem;
+}
 
 .item {
     padding: 0 1rem 0 1rem;
@@ -165,6 +143,20 @@ hr {
     color: white;
 }
 
+.filters {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.checkboxes {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+
 
 @media(max-width:1100px) {
     .el-container {
@@ -191,12 +183,42 @@ hr {
         padding: 0 1rem 0 1rem;
     }
 
-    .fakePhoto {
-        width: 3rem;
+
+}
+
+@media(max-width: 670px) {
+    .el-container {
+        width: 90%;
+        
     }
 
-    .fakeStatus {
-        padding-right: 6%;
+
+    .tripInfo {
+        width: 90vw;
+        flex-direction: column;
+    }
+
+    .about {
+        border: none;
+        width: 90%;
+        align-self: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .item {
+        padding: 0;
+        width: fit-content;
+    }
+
+    .con {
+        display: flex;
+        max-width: none;
+        gap: 0.25rem;
+    }
+
+    .checkboxes {
+        flex-direction: column;
+        align-items: center;
     }
 
 }
