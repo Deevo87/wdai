@@ -66,6 +66,14 @@ export class DataService {
     return this.boughtID
   }
 
+  updateRate(id: number|undefined, rate: number | null, cnt: number | undefined) {
+    if (cnt === undefined){
+      return
+    }
+    this.daneRef.doc(id+'').update({ overallRate: rate })
+    this.daneRef.doc(id+'').update({ raitings: cnt+1})
+  }
+
 
   printData() {
     return this.daneRef.valueChanges().subscribe(change => { for(let i of change) console.log(i) });

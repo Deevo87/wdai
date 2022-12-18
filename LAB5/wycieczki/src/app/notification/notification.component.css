@@ -5,3 +5,11 @@
 span {
     color: tomato;
 }
+
+.button {
+    border: none;
+}
+
+.btn {
+    border: none;
+}

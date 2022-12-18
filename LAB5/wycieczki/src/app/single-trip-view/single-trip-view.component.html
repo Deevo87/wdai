@@ -64,7 +64,7 @@
                     <p class="overall">ocena: {{ calculateRate() }}</p>
                 </div>
                 <app-trip-rating (rated)="raitingTrip($event)" [overallRate]="trip!.overallRate"
-                [raitings]="trip!.raitings"></app-trip-rating>
+                [raitings]="trip!.raitings" [tripToRate]="trip"></app-trip-rating>
             </div>
         </div>
     </div>

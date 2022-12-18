@@ -1,6 +1,8 @@
-import { Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit} from '@angular/core';
 import { Trip } from '../trips/trips.component';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { DataService } from '../services/data.service';
+import { Data } from '@angular/router';
 
 
 @Component({
@@ -8,19 +10,21 @@ import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
   templateUrl: './trip-rating.component.html',
   styleUrls: ['./trip-rating.component.css']
 })
-export class TripRatingComponent {
+export class TripRatingComponent implements OnInit{
+
+  constructor(private dataService: DataService){}
+
+  ngOnInit(): void {
+  }
 
   @Output() rated = new EventEmitter<number>()
 
+  @Input() tripToRate!: Trip | undefined
   @Input() overallRate = 0
   @Input() raitings = 0
 
-  ctrl = new FormControl<number | null>(null, Validators.required);
 
-  // public starRating: any
-  // ngOnInit(): void {
-  //     this.starRating = 3
-  // }
+  ctrl = new FormControl<number | null>(null, Validators.required);
   
   voted = false
 
@@ -30,9 +34,10 @@ export class TripRatingComponent {
     }
     this.voted = true
     let val = this.ctrl.value
+    this.dataService.updateRate(this.tripToRate?.id, val + this.tripToRate?.overallRate, this.tripToRate?.raitings)
+    console.log(val)
     if (val != null){
       this.rated.emit(val)
-      console.log("rating na szybkości: " + val)
     }
   }
 
