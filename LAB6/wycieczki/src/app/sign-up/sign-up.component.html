@@ -1,0 +1,31 @@
+<div class="main">
+  <div class="info">
+    <h1>Zarejestruj się</h1>
+  </div>
+  <div class="sign-upForm">
+    <form [formGroup]="accountForm">
+      <div class="mb-3">
+        <label for="fname" class="form-label">Imię</label>
+        <input type="fname" class="form-control" id="fname" name="fname" formControlName="fname">
+        <span class="errorMsg" *ngIf="formErrors.fname">{{ formErrors.fname }}</span>
+      </div>
+      <div class="mb-3">
+        <label for="lname" class="form-label">Nazwisko</label>
+        <input type="lname" class="form-control" id="lname" name="lname" formControlName="lname">
+        <span class="errorMsg" *ngIf="formErrors.lname">{{ formErrors.lname }}</span>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" formControlName="email">
+        <span class="errorMsg" *ngIf="formErrors.email">{{ formErrors.email }}</span>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Hasło</label>
+        <input type="password" class="form-control" id="password" name="password" formControlName="password">
+        <span class="errorMsg" *ngIf="formErrors.password">{{ formErrors.password }}</span>
+      </div>
+      <button type="submit" class="btn btn-primary"(click)="signUp()">Wyślij</button>
+    </form>
+  </div>
+</div>
+

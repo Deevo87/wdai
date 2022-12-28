@@ -1,0 +1,34 @@
+.main {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sign-upForm {
+    margin-top: 3%;
+    width: 60%;
+}
+
+.errorMsg {
+    color: tomato;
+    display: flex;
+    justify-content: center;
+}
+
+.info {
+    width: 100%;
+    height: 20vh;
+    background-color: rgb(249, 191, 59);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    letter-spacing: 8px;
+}

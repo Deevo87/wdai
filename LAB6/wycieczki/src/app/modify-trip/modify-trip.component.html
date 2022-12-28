@@ -1,0 +1,53 @@
+<form [formGroup]="modifyForm">
+    <div class="main">
+        <div class="trips-list">
+            <div class="trip-card" *ngFor="let trip of trips">
+                <div class="image">
+                  <img src={{trip.imageLink1}} alt="">
+                  <div class="add-form-el">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="imageLink" placeholder="img nr 1 (puste oznacz te samo)" name="imageLink" formControlName="modifiedImageLink1">
+                    </div>
+                  </div>
+                  <div class="add-form-el">
+                    <div class="input-group">
+                      <input type="text" class="form-control" name="imageLink" placeholder="img nr 2 (puste oznacz te samo)" name="imageLink" formControlName="modifiedImageLink3">
+                    </div>
+                  </div>
+                  <div class="add-form-el">
+                    <div class="input-group">
+                      <input type="text" class="form-control" name="imageLink" placeholder="img nr 3 (puste oznacz te samo)" name="imageLink" formControlName="modifiedImageLink2">
+                    </div>
+                  </div>
+                </div>  
+                <div class="card-header">
+                    {{trip.id}}
+                    <p class="name">{{ trip.name | uppercase }}</p>
+                    <input type="text" class="form-control" placeholder="{{ trip.name | uppercase }}" name="UnitPrice" formControlName="modifiedName">
+                </div>
+                <p class="des">kraj: {{ trip.destination | uppercase}}</p>
+                <input type="text" class="form-control" name="destination"  placeholder="{{ trip.destination | uppercase}}" formControlName="modifiedDestination">
+                <p class="date">
+                    data: {{ trip.startDate }} - {{ trip.endDate }}
+                </p>
+                <input type="text" class="form-control" placeholder="{{ trip.startDate }}" name="startDate" formControlName="modifiedStartDate">
+                <input type="text" class="form-control" placeholder="{{ trip.endDate }}" name="endDate" formControlName="modifiedEndDate">
+                <p class="desc">{{ trip.shortDesc}}</p>
+                <textarea class="form-control" placeholder="{{ trip.shortDesc}}" name="shortDesc" formControlName="modifiedShortDesc"></textarea>
+                <div class="bottom">
+                    <div class="lay">
+                        <p class="price">cena: {{ trip.unitPrice | currency: actualCurrency}}</p>
+                        <input type="text" class="form-control" placeholder="{{ trip.unitPrice }}" name="UnitPrice" formControlName="modifiedUnitPrice">
+                    </div>
+                    <div class="amount">
+                        <p class="cnt">ilość: {{trip.maxQuantity}}</p>
+                        <input type="text" class="form-control" placeholder="{{trip.maxQuantity}}" name="maxQuantity" formControlName="modifiedMaxQuantity">
+                    </div>
+                    <button type="button" class="btn btn-danger" (click)="modifyTrip(trip)">modify</button>
+                    <button type="button" class="btn btn-danger" (click)="deleteTrip(trip)">delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

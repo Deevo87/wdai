@@ -1,0 +1,12 @@
+.select {
+    text-align: center;
+}
+
+.select-form {
+    display: flex;
+    justify-content: center;
+}
+
+select {
+    width: 8rem;
+}

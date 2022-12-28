@@ -1,0 +1,19 @@
+<div class="ratings">
+    <!-- <div class="desc">
+        <p class="cnt">ilosć ocen: {{ raitings }}</p>
+        <p class="overall">ocena: {{ calculateRate() }}</p>
+    </div> -->
+    <div class="stars">
+        <div class="stars">
+            <p class="rateUs">Oceń nas!</p>
+            <ng-component *ngIf="isBought == true; then rate; else error"></ng-component>
+            <ng-template #rate>
+                <ngb-rating [max]="5" [formControl]="ctrl" (click)="registerRate()"></ngb-rating>
+            </ng-template>
+            <ng-template #error>
+                <p class="error">Możesz to zrobić zaraz po zakupie!</p>
+            </ng-template>
+        </div>
+    </div>
+</div>
+    

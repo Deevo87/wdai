@@ -1,0 +1,12 @@
+<div class="select">
+    <p>Wybierz tryb prezystancji:</p>
+    <div class="select-form">
+        <select class="form-select" #mode (change)="changePresistence(mode.value)">
+            <option value="local">Local</option>
+            <option value="session">Session</option>
+            <option value="none">None</option>
+        </select>
+    </div>
+    
+<p *ngIf="selectedMode !== ''">Aktulany tryb prezystancji to: {{ selectedMode }}</p>
+</div>

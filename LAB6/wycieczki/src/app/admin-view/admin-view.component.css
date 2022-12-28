@@ -1,0 +1,31 @@
+.main {
+    width: 100%;
+}
+
+.changePres {
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+}
+
+.user-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 2rem;
+}
+
+.item {
+    width: 100%;
+    padding-left: 0.5rem;
+    border: 1px solid black;
+}
+
+h1 {
+    text-align: center;
+}
+
+.role {
+    display: flex;
+    flex-direction: column;
+}

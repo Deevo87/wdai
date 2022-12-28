@@ -1,0 +1,42 @@
+<div class="main">
+    <div class="changePres">
+        <app-change-presistence></app-change-presistence>
+    </div>
+    <h1>lista użytkowików</h1>
+    <div class="template-list">
+        <ul class="user-list">
+            <li class="item">email</li>
+            <li class="item">first name</li>
+            <li class="item">last name</li>
+            <li class="item">role</li>
+            <li class="item">banned</li>
+        </ul>
+    </div>
+    <div class="template-list">
+        <ul class="user-list" *ngFor="let user of users">
+            <li class="item">{{ user.email }}</li>
+            <li class="item">{{ user.fname }}</li>
+            <li class="item">{{ user.lname }}</li>
+            <li class="item role">
+                <div class="check-box">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" [checked]="user.role.split(',').includes('admin')" (change)="addRole('admin', user)">
+                    <label class="form-check-label" for="flexCheckChecked">admin</label>
+                </div>
+                <div class="check-box">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" [checked]="user.role.split(',').includes('menager')" (change)="addRole('menager', user)">
+                    <label class="form-check-label" for="flexCheckChecked">menager</label>
+                </div>
+                <div class="check-box">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" [checked]="user.role.split(',').includes('customer')" (change)="addRole('customer', user)">
+                    <label class="form-check-label" for="flexCheckChecked">customer</label>
+                </div>
+            </li>
+            <li class="item">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" [checked]="user.isBanned" (change)="changeBannedStatus(user)">
+                    <label class="form-check-label" for="flexCheckChecked">Ban</label>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+<div class="main">
+    <div class="nav-elements">
+        <div class="logo">
+            <img src="assets/img/trippin_logo.png" alt="">
+        </div>
+        <div class="right">
+            <!-- <div class="routing"> -->
+            <div class="nav-link">
+                <a class="link" routerLink="" routerLinkActive="active">Start</a>
+            </div>
+            <div class="nav-link">
+                <a class="link" routerLink="trips" routerLinkActive="active">Oferta</a>
+            </div>
+            <div class="nav-link">
+                <a class="link" routerLink="adding" routerLinkActive="active">
+                    <span class="material-symbols-outlined">add_circle</span>
+                </a>
+            </div>
+            <div class="nav-link">
+                <a class="link" routerLink="history" routerLinkActive="active">
+                    <span class="material-symbols-outlined">history</span>
+                </a>
+            </div>
+            <div class="basket">
+                <a class="link" routerLink="basket" routerLinkActive="active">
+                    <span class="material-symbols-outlined">shopping_basket</span>
+                </a>
+            </div>
+            <div class="userInfo nav-link">
+                <a class="link">
+                    <button class="btn dropdown" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                        <span class="material-symbols-outlined">person</span>
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#" routerLink="sign-up" routerLinkActive="active" *ngIf="accountService.ifLogged">
+                          {{ accountService.loggedUser }}
+                      </a></li>
+                        <li><a class="dropdown-item" href="#" routerLink="sign-up" routerLinkActive="active" *ngIf="!accountService.ifLogged">
+                            Zarejestruj
+                        </a></li>
+                        <li><a class="dropdown-item" href="#" routerLink="log-in" routerLinkActive="active" *ngIf="!accountService.ifLogged">
+                          Zaloguj
+                        </a></li>
+                        <li><a *ngIf="whatRole()" class="dropdown-item" href="#" routerLink="admin-view" routerLinkActive="active" >
+                          AdminView
+                        </a></li>
+                        <li><a class="dropdown-item" href="#" *ngIf="accountService.ifLogged" (click)="signOut()">Wyloguj</a></li>
+                      </ul>
+                </a>
+            </div>
+            
+            <div class="basketInfo" *ngIf="accountService.ifLogged">
+                <app-basket-info></app-basket-info>
+            </div>
+            <!-- </div> -->
+        </div>
+
+        <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            Button with data-bs-target
+          </button>
+          
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div>
+                Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+              </div>
+              <div class="dropdown mt-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                  Dropdown button
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+            </div>
+          </div> -->
+
+    </div>
+</div>
