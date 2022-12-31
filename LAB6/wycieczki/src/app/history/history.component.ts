@@ -56,7 +56,6 @@ export class HistoryComponent implements OnInit{
       this.boughtTrips = []
       this.suma = 0
       this.qua = 0
-      console.log(change.bought)
       for (let item of change.bought) {
         console.log(item)
         this.boughtTrips.push({
@@ -73,7 +72,6 @@ export class HistoryComponent implements OnInit{
           status: item.status,
           reviewed: item.reviewed
         })
-        console.log(this.boughtTrips)
       }
     })
   }

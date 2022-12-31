@@ -18,6 +18,7 @@ export class PostsComponent implements OnInit{
 
   posts: Post[] = []
   isBought!: boolean
+  isBanned!: boolean
 
   formErrors = {
     postName: '',
@@ -59,11 +60,15 @@ export class PostsComponent implements OnInit{
 
   ngOnInit(): void {
     this.isBought = false
+    this.isBanned = false
     this.accountService.getUserInfo().subscribe(change => {
       for (let item of change.bought) {
         if (item.name === this.tName) {
           this.isBought = true
         }
+      }
+      if (change.isBanned) {
+        this.isBanned = true
       }
     })
     this.postForm = this.formBuilder.group({
@@ -117,5 +122,6 @@ export class PostsComponent implements OnInit{
     }
     return false
   }
+
 }
 

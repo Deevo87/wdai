@@ -34,6 +34,7 @@
                 <input type="text" class="form-control" placeholder="{{ trip.endDate }}" name="endDate" formControlName="modifiedEndDate">
                 <p class="desc">{{ trip.shortDesc}}</p>
                 <textarea class="form-control" placeholder="{{ trip.shortDesc}}" name="shortDesc" formControlName="modifiedShortDesc"></textarea>
+                <textarea class="form-control" placeholder="{{ trip.longDesc}}" name="longDesc" formControlName="modifiedLongDesc"></textarea>
                 <div class="bottom">
                     <div class="lay">
                         <p class="price">cena: {{ trip.unitPrice | currency: actualCurrency}}</p>

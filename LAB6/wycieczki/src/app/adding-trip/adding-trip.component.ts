@@ -24,6 +24,7 @@ export class AddingTripComponent implements OnInit {
     tripUnitPrice: '',
     tripMaxQuantity: '',
     tripShortDesc: '',
+    tripLongDesc: '',
     tripImageLink1: '',
     tripImageLink2: '',
     tripImageLink3: ''
@@ -55,6 +56,11 @@ export class AddingTripComponent implements OnInit {
       pattern: 'Tylko liczby!'
     },
     tripShortDesc: {
+      required: 'Opis jest wymagany!',
+      minlength: 'Minimum 20 znaków.',
+      maxlength: 'Maksimum 60 znaków.'
+    },
+    tripLongDesc: {
       required: 'Opis jest wymagany!',
       minlength: 'Minimum 20 znaków.',
       maxlength: 'Maksimum 60 znaków.'
@@ -92,6 +98,7 @@ export class AddingTripComponent implements OnInit {
       tripUnitPrice: ['', [Validators.required, Validators.pattern('[0-9]+')]],
       tripMaxQuantity: ['', [Validators.required, Validators.pattern('[0-9]+')]],
       tripShortDesc: ['', [Validators.required, Validators.minLength(20), Validators.maxLength(60)]],
+      tripLongDesc: ['', [Validators.required, Validators.minLength(60), Validators.maxLength(120)]],
       tripImageLink1: ['', [Validators.required, Validators.minLength(12)]],
       tripImageLink2: ['', [Validators.required, Validators.minLength(12)]],
       tripImageLink3: ['', [Validators.required, Validators.minLength(12)]],
@@ -139,6 +146,7 @@ export class AddingTripComponent implements OnInit {
       avaible: this.tripForm.get('tripMaxQuantity')!.value,
       reserved: 0,
       shortDesc: this.tripForm.get('tripShortDesc')!.value,
+      longDesc: this.tripForm.get('tripLongDesc')!.value,
       imageLink1: this.tripForm.get('tripImageLink1')!.value,
       imageLink2: this.tripForm.get('tripImageLink2')!.value,
       imageLink3: this.tripForm.get('tripImageLink3')!.value,

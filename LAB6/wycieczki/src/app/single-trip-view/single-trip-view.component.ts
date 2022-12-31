@@ -46,13 +46,15 @@ export class SingleTripViewComponent implements OnInit {
   }
 
   removingTickets() {
-    if (this.trip!.maxQuantity < this.trip!.avaible) {
-      this.trip!.counter -= 1
-      this.trip!.maxQuantity += 1
-      this.trip!.reserved -= 1
+    if (this.accountService.checkIfisInBasket(this.trip!.id)) {
+      if (this.trip!.maxQuantity < this.trip!.avaible) {
+        this.trip!.counter -= 1
+        this.trip!.maxQuantity += 1
+        this.trip!.reserved -= 1
+      }
+      if (this.trip != undefined)
+      this.dataService.updateQuantity(this!.id, this.trip!.maxQuantity, this.trip!.reserved, this.trip, -1)
     }
-    if (this.trip != undefined)
-    this.dataService.updateQuantity(this!.id, this.trip!.maxQuantity, this.trip!.reserved, this.trip, -1)
   }
 
   raitingTrip(rate: number) {

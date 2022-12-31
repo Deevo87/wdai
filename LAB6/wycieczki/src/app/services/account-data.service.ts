@@ -30,18 +30,15 @@ export class AccountDataService {
   constructor(private db : AngularFirestore, private angularFA : AngularFireAuth, private router : Router) { 
     this.userData = angularFA.authState;
     this.userData.subscribe((user : any) => {
-      console.log(user?.uid)
       this.currUserID = user?.uid
       this.accountRef.doc(this.currUserID + '').valueChanges().subscribe(user => {
         this.currRole = (user) ? (user as account).role : undefined
-        console.log(this.currRole)
         this.loggedUser = (user) ? (user as account).fname + (user as account).lname.slice(0, 1) : undefined
         this.userBasket = (user) ? (user as account).basket : undefined
         this.userBought = (user) ? (user as account).bought : undefined
       })
     })
     this.isLogged()
-    console.log(this.ifLogged)
     this.presistenceRef.doc('0').valueChanges().subscribe(change => {
       this.presistance = (change as {current: any}).current
     })
@@ -72,12 +69,11 @@ export class AccountDataService {
     })
     .catch(err => {
       window.alert(err.message)
-      console.log(err.message)
     })
    }
+
    addToUserBasket(trip : Trip, cnt : number) {
     let tmp =  this.findIds(trip.id, cnt)
-    console.log('tmp', tmp)
     if (tmp > 0) {
       trip.reserved = tmp
       console.log(trip)
@@ -90,11 +86,9 @@ export class AccountDataService {
    }
 
    findIds(id : number, cnt : number) { //popraw to
-    console.log(this.userBasket)
     let tmp = 0
     for (let item of this.userBasket) {
       if (item.id === id) {
-        // this.deleteFromUserBasket(item)
         tmp = item.trip.reserved + cnt
         this.deleteFromUserBasket(item)
         if (cnt === 0) {
@@ -106,6 +100,15 @@ export class AccountDataService {
     }
     return cnt
    }
+
+   checkIfisInBasket(id : number) {
+    for (let item of this.userBasket) {
+      if (item.id === id) {
+        return true
+        }
+      }
+      return false
+    }
 
    deleteFromUserBasket(trip : any) {
     this.accountRef.doc(this.currUserID).update({
@@ -148,19 +151,21 @@ export class AccountDataService {
     })
    }
 
-   changeBanned(banned : boolean) {
-    this.accountRef.doc(this.currUserID).update({
+   changeBanned(banned : boolean, id : string) {
+    this.accountRef.doc(id).update({
       isBanned: banned
     })
    }
 
-   changeRoles(roles : any) {
-    this.accountRef.doc(this.currUserID).update({
+   changeRoles(roles : any, id : string) {
+    this.accountRef.doc(id).update({
       role: roles.toString()
     })
    }
 
    LogIn(email : string, password : string) {
+    console.log(this.presistance)
+
     this.angularFA.setPersistence(this.presistance).then(() => {
       this.angularFA
       .signInWithEmailAndPassword(email, password)

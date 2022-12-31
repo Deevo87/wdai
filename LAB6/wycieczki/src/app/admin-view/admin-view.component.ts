@@ -20,6 +20,7 @@ export class AdminViewComponent implements OnInit{
         this.users = []
         for (let user of change) {
           this.users.push({
+            uid: user.uid,
             fname: user.fname,
             lname: user.lname,
             email: user.email,
@@ -31,11 +32,13 @@ export class AdminViewComponent implements OnInit{
   }
 
   changeBannedStatus(user : any) {
-    this.accountService.changeBanned(!user.isBanned)
+    this.accountService.changeBanned(!user.isBanned, user.uid)
   }
 
 
   addRole(role : string, user : any) {
+    console.log(this.users)
+    console.log(user)
     let str = user.role
     let tab = str?.split(",")
     if (tab.includes(role)) {
@@ -45,7 +48,7 @@ export class AdminViewComponent implements OnInit{
       tab.push(role)
     }
     user.role = tab.toString()
-    this.accountService.changeRoles(tab)
+    this.accountService.changeRoles(tab, user.uid)
   }
 
 }

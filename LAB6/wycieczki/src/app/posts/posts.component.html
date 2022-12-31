@@ -14,9 +14,9 @@
                   </div>
                   <div class="collapse navbar-collapse navbar-light bg-light" id="navbarNav">
                     <div class="add-form" >
-                      <ng-component *ngIf="isBought == true || getCurrRole().includes('menager'); then post; else error"></ng-component>
+                      <ng-component *ngIf="(isBought == true || getCurrRole().includes('menager')) && isBanned == false; then post; else error"></ng-component>
                       <ng-template #error>
-                        <p class="error">Aby dodać opinię do tej wycieczki musisz ją najpierw kupić!</p>
+                        <p class="error">Aby dodać opinię do tej wycieczki musisz ją najpierw kupić lub nie być zbanowany!</p>
                       </ng-template>
                       <ng-template #post>
                         <p>Nazwa wyczieczki musi być taka sama jak w aktualnym podglądzie! ({{tName}})</p>

@@ -47,15 +47,13 @@ export class DataService {
   }
   //adding -1 odejmuję, 0 zeruje, 1 dodaje
   updateQuantity(id: number, quantity: number, reserved:number, trip: Trip, adding: number) { // czy powininem usuwac wycieczkę jak maxQuantity jest 0???
-    console.log(trip)
     this.daneRef.doc(id+'').update({maxQuantity: quantity});
     // this.daneRef.doc(id+'').update({reserved: reserved});
-    console.log(trip)
     if (adding === 0) { //reserved straciło swoją funkcjonalność, teraz służy tylko przekazania informacji, że daną wycieczkę usutnięto przycikiem "śmietnik" z koszyka
       console.log(trip)
       this.accountService.findIds(trip.id, 0)
     } else {
-      this.accountService.addToUserBasket(trip, adding) //???
+      this.accountService.addToUserBasket(trip, adding)
     }
   }
 

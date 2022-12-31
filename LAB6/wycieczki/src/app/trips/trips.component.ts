@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { AccountDataService } from '../services/account-data.service';
-// import { Trip } from '../Trip';
-// import { BasketService } from '../services/basket.service';
 
 @Component({
   selector: 'app-trips',
@@ -12,7 +10,7 @@ import { AccountDataService } from '../services/account-data.service';
 
 
 export class TripsComponent implements OnInit{
-  constructor(public dataService: DataService, private accountService: AccountDataService) {
+  constructor(private dataService: DataService, private accountService: AccountDataService) {
     // console.log(this.trips)
     // console.log(this.dataService.printData())
     // this.dataService.createTrip()
@@ -88,23 +86,22 @@ export class TripsComponent implements OnInit{
   }
 
   addingTickets(trip: Trip) {
-    console.log(this.trips)
+    console.log(trip)
     if (trip.maxQuantity > 0) {
       trip.maxQuantity -= 1
-      // trip.reserved += 1
     }
     this.dataService.updateQuantity(trip.id, trip.maxQuantity, trip.reserved, trip, 1)
   }
 
   removingTickets(trip: Trip) {
-    if (trip.maxQuantity < trip.avaible) {
-      trip.maxQuantity += 1
-      // trip.reserved -= 1
-
+    if (this.accountService.checkIfisInBasket(trip.id)){
+      if (trip.maxQuantity < trip.avaible) {
+        trip.maxQuantity += 1
+      }
+      console.log(trip.reserved + ' ' + 'reserved')
+      this.dataService.updateQuantity(trip.id, trip.maxQuantity, trip.reserved, trip, -1)
+      }
     }
-    console.log(trip.reserved + ' ' + 'reserved')
-    this.dataService.updateQuantity(trip.id, trip.maxQuantity, trip.reserved, trip, -1)
-  }
 
   changeTripCnt(trip: Trip[]) {
     let cnt = 0

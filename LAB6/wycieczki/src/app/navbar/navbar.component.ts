@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AccountDataService } from '../services/account-data.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { AccountDataService } from '../services/account-data.service';
 export class NavbarComponent implements OnInit {
 
  
-  constructor(public accountService: AccountDataService) {
+  constructor(public accountService: AccountDataService, private router : Router) {
     accountService.isLogged()
   }
 
@@ -18,7 +19,8 @@ export class NavbarComponent implements OnInit {
   }
 
   signOut() {
-    this.accountService.SignOut() 
+    this.accountService.SignOut()
+    this.reloadAll()
   }
 
   whatRole() {
@@ -26,5 +28,13 @@ export class NavbarComponent implements OnInit {
       return true
     }
     return false
+  }
+
+  reloadAll() {
+    this.router.navigateByUrl('/',{skipLocationChange:true}).then(()=>{
+      this.router.navigate(['']).then(()=>{
+        window.location.reload
+      })
+    })
   }
 }
